@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hero Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Hero Game</h1>
+
+    <!-- MENU -->
+    <div class="hero-selection">
+      <h2>Vyber si hrdinu</h2>
+      <button class="hero" data-hero="warrior">Válečník</button>
+      <button class="hero" data-hero="mage">Mág</button>
+      <button class="hero" data-hero="archer">Lučištník</button>
+      <p>Vybráno: <span id="selected-hero"></span></p>
+      <button id="start-game-btn" disabled>pokračuj</button>
+    </div>
+    <!-- MENU -->
+
+    <!-- enemy choose -->
+    <div class="enemy-selection" style="display: none">
+      <h2>Vyber si protivníka</h2>
+      <button class="enemy" data-enemy="goblin">Skřet</button>
+      <button class="enemy" data-enemy="skeleton">Kostlivec</button>
+      <p>Vybráno: <span id="selected-enemy"></span></p>
+      <button id="choose-enemy-btn" disabled>pokračuj</button>
+    </div>
+    <!-- enemy choose -->
+
+    <!-- BOJ -->
+    <div class="game" style="display: none">
+      <p id="selected-hero"></p>
+      <p class="hero-hp">Hrdina má: 100 HP</p>
+      <p class="damageToHero"></p>
+      <p class="hero-info"></p>
+      <button class="attack-btn">Útoč</button>
+      <p id="selected-enemy"></p>
+      <p class="enemy-hp">Nepřítel má: 100 HP</p>
+      <p class="damageToEnemy"></p>
+      <p class="enemy-info"></p>
+      <button id="restart-game-btn" style="display: none">
+        Restartovat hru
+      </button>
+    </div>
+    <!-- BOJ -->
+
+    <script src="script.js"></script>
+  </body>
+</html>

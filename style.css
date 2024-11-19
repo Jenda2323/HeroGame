@@ -1,0 +1,41 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f3f3f3;
+  color: #333;
+}
+
+.game {
+  margin: 20px auto;
+  padding: 10px;
+  max-width: 400px;
+  border: 2px solid #000;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.damageToEnemy {
+  color: red;
+}
+.damageToHero {
+  color: red;
+}
+.hero-info, .enemy-info {
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* BUTTONS */
+button {
+  cursor: pointer;
+}
+button:disabled {
+  background-color: silver;
+  cursor: not-allowed;
+}
+
+.attack-btn {
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: grabbing;
+}
