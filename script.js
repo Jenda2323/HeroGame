@@ -61,7 +61,7 @@ document.querySelectorAll(".hero").forEach((button) => {
     heroHP = heroStats.health;
     document.getElementById(
       "selected-hero"
-    ).innerHTML = `${heroStats.name}<br><br>Zdraví: ${heroStats.health}HP | ${heroStats.weapon} (1-${heroStats.attack} dmg) | ${heroStats.armor} (${heroStats.defense} def)`;
+    ).innerHTML = `${heroStats.name}<br><br>Zdraví: ${heroStats.health} HP | ${heroStats.weapon} (1-${heroStats.attack} dmg) | ${heroStats.armor} (${heroStats.defense} def)`;
     document.getElementById("start-game-btn").disabled = false;
   });
 });
@@ -81,7 +81,7 @@ document.querySelectorAll(".enemy").forEach((button) => {
     enemyHP = enemyStats.health;
     document.getElementById(
       "selected-enemy"
-    ).innerHTML = `${enemyStats.name}<br><br>Zdraví: ${enemyStats.health}HP | ${enemyStats.weapon} (1-${enemyStats.attack} dmg) | ${enemyStats.armor} (${enemyStats.defense} def)`;
+    ).innerHTML = `${enemyStats.name}<br><br>Zdraví: ${enemyStats.health} HP | ${enemyStats.weapon} (1-${enemyStats.attack} dmg) | ${enemyStats.armor} (${enemyStats.defense} def)`;
     document.getElementById("choose-enemy-btn").disabled = false;
   });
 });
@@ -102,7 +102,7 @@ document.getElementById("choose-enemy-btn").addEventListener("click", () => {
   document.querySelector(".hero-hp").textContent = `Hrdina má: ${heroHP} HP`;
   document.querySelector(
     ".enemy-hp"
-  ).textContent = `Nepřítel má: ${enemyHP} HP`;
+  ).textContent = `${enemyStats.name} má: ${enemyHP} HP`;
   resetCombatMessages();
 });
 
@@ -118,18 +118,17 @@ function attackEnemy() {
 
   const enemyHpElement = document.querySelector(".enemy-hp");
   const heroHpElement = document.querySelector(".hero-hp");
-  const attackBtn = document.querySelector(".attack-btn");
   const damageToEnemy = document.querySelector(".damageToEnemy");
   const damageToHero = document.querySelector(".damageToHero");
   const heroInfo = document.querySelector(".hero-info");
   const enemyInfo = document.querySelector(".enemy-info");
 
   if (enemyHP <= 0) {
-    enemyHpElement.textContent = "Nepřítel je poražen!";
+    enemyHpElement.textContent = `${enemyStats.name} je poražen!`;
     endGame("Hrdina vyhrál!");
   } else {
-    enemyHpElement.textContent = `Nepřítel má: ${enemyHP} HP`;
-    damageToEnemy.textContent = `Nepřitel je zraněn o ${realDamageToEnemy} HP`;
+    enemyHpElement.textContent = `${enemyStats.name} má: ${enemyHP} HP`;
+    damageToEnemy.textContent = `${enemyStats.name} je zraněn o ${realDamageToEnemy} HP`;
     enemyInfo.textContent = `${heroDamage} dmg - ${enemyStats.defense} def = ${realDamageToEnemy}`;
   }
   if (heroHP <= 0) {

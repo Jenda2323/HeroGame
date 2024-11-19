@@ -1,8 +1,26 @@
+@font-face {
+  font-family: "Pixel";
+  src: url("fonts/Pixel.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Rpg";
+  src: url("fonts/rpg.otf") format("truetype");
+}
 body {
-  font-family: Arial, sans-serif;
   text-align: center;
   background-color: #f3f3f3;
   color: #333;
+  font-family: rpg;
+  font-size: 2rem;
+  background-color: rgba(241, 211, 161, 0.8);
+}
+h1 {
+  font-size: 5rem;
+  border: 5px solid black;
+  padding: 2rem;
+  border-radius: 2rem;
+  background-color: cadetblue;
 }
 
 .game {
@@ -20,22 +38,40 @@ body {
 .damageToHero {
   color: red;
 }
-.hero-info, .enemy-info {
-  font-size: 0.9rem;
+.hero-info,
+.enemy-info {
+  font-size: 1.2rem;
   font-style: italic;
+  font-family: rpg;
 }
 
 /* BUTTONS */
 button {
   cursor: pointer;
+  font-family: rpg;
+  font-size: 2rem;
+  border-radius: 10px;
+  padding: 10px;
+}
+button:hover {
+  background-color: lightgreen;
+  transform: scale(1.1);
+  transition: transform 0.8s ease;
 }
 button:disabled {
   background-color: silver;
   cursor: not-allowed;
+  font-family: rpg;
+  transform: scale(1);
+}
+button:disabled:hover {
+  background-color: lightcoral;
 }
 
 .attack-btn {
-  padding: 10px 20px;
-  font-size: 18px;
+  padding: 20px;
   cursor: grabbing;
+  font-family: rpg;
+  transform: scale(1.2);
+  transition: transform 1s ease-in-out;
 }
