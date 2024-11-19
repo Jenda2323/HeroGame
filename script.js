@@ -1,52 +1,11 @@
 "use strict";
-
-// Hrdinove
-const heroes = {
-  warrior: {
-    name: "Válečník",
-    weapon: "Meč",
-    armor: "Základní brnění",
-    health: 35,
-    attack: 7,
-    defense: 4,
-  },
-  mage: {
-    name: "Mág",
-    weapon: "Hůl",
-    armor: "Novicův plášť",
-    health: 25,
-    attack: 12,
-    defense: 1,
-  },
-  archer: {
-    name: "Lučištník",
-    weapon: "Krátký luk",
-    armor: "Kožená zbroj",
-    health: 30,
-    attack: 9,
-    defense: 2,
-  },
+console.log("Script is running");
+window.onload = function () {
+  console.log("Page loaded");
 };
 
-// Bestiář
-const enemies = {
-  goblin: {
-    name: "Skřet",
-    weapon: "Zlomený meč",
-    armor: "Skřetí skelet",
-    health: 20,
-    attack: 9,
-    defense: 2,
-  },
-  skeleton: {
-    name: "Kostlivec",
-    weapon: "Mrtvolný meč",
-    armor: "Prastaré brnění",
-    health: 18,
-    attack: 7,
-    defense: 3,
-  },
-};
+import { heroes } from "./persons/heroes.js";
+import { enemies } from "./persons/bestiary.js";
 
 let selectedHero = "";
 let heroStats = {};
@@ -71,11 +30,16 @@ document.querySelectorAll(".hero").forEach((button) => {
 // Funkce pro začátek nové hry
 document.getElementById("start-game-btn").addEventListener("click", () => {
   document.querySelector(".hero-selection").style.display = "none";
-  document.querySelector(".enemy-selection").style.display = "block";
-  console.log(`${selectedHero} začíná hru!`);
+  document.querySelector(".start").style.display = "block";
 });
 
-// vyber nepritele
+//uvod//
+document.getElementById("start-btn-1").addEventListener("click", () => {
+  document.querySelector(".start").style.display = "none";
+  document.querySelector(".enemy-selection").style.display = "block";
+});
+
+// vyber nepritele poprve
 document.querySelectorAll(".enemy").forEach((button) => {
   button.addEventListener("click", (event) => {
     selectedEnemy = event.target.getAttribute("data-enemy");
@@ -99,7 +63,7 @@ function resetCombatMessages() {
 // zacni boj
 document.getElementById("choose-enemy-btn").addEventListener("click", () => {
   document.querySelector(".enemy-selection").style.display = "none";
-  document.querySelector(".game").style.display = "block";
+  document.querySelector(".fight").style.display = "block";
 
   document.querySelector(".hero-hp").textContent = `Hrdina má: ${heroHP} HP`;
   document.querySelector(
@@ -146,7 +110,7 @@ document.querySelector(".attack-btn").addEventListener("click", attackEnemy);
 
 // Restart button
 document.getElementById("restart-game-btn").addEventListener("click", () => {
-  location.reload(); 
+  location.reload();
 });
 
 // Konec

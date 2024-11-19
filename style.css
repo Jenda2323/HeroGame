@@ -27,9 +27,9 @@ h1 {
   margin: 20px auto;
   padding: 10px;
   max-width: 400px;
-  border: 2px solid #000;
+  border: 3px solid #000;
   border-radius: 10px;
-  background-color: #fff;
+  background-color: #ddd9d4;
 }
 
 .damageToEnemy {
@@ -73,5 +73,13 @@ button:disabled:hover {
   cursor: grabbing;
   font-family: rpg;
   transform: scale(1.2);
+  transition: transform 1s ease-in-out;
+}
+#restart-game-btn {
+  margin: auto;
+  display: block;
+}
+#restart-game-btn:hover {
+  transform: scale(1.1);
   transition: transform 1s ease-in-out;
 }
