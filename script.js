@@ -1,5 +1,6 @@
 "use strict";
 
+// Hrdinove
 const heroes = {
   warrior: {
     name: "Válečník",
@@ -27,6 +28,7 @@ const heroes = {
   },
 };
 
+// Bestiář
 const enemies = {
   goblin: {
     name: "Skřet",
@@ -142,10 +144,12 @@ function attackEnemy() {
 }
 document.querySelector(".attack-btn").addEventListener("click", attackEnemy);
 
+// Restart button
 document.getElementById("restart-game-btn").addEventListener("click", () => {
-  location.reload(); // Načte hru znovu
+  location.reload(); 
 });
 
+// Konec
 function endGame(message) {
   const attackBtn = document.querySelector(".attack-btn");
   const restartBtn = document.getElementById("restart-game-btn");
